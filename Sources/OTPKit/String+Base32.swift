@@ -9,14 +9,15 @@
 import Foundation
 
 extension String {
+    /// The base32-decoded `Data` of `self`, or `nil` if `self` could not be decoded.
     var base32: Data? {
         base32decode(self, alphabetDecodeTable)
     }
 }
 
 // swiftlint:disable comma trailing_comma identifier_name
-let __: UInt8 = 255
-let alphabetDecodeTable: [UInt8] = [
+private let __: UInt8 = 255
+private let alphabetDecodeTable: [UInt8] = [
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x00 - 0x0F
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x10 - 0x1F
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x20 - 0x2F
@@ -35,7 +36,7 @@ let alphabetDecodeTable: [UInt8] = [
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0xF0 - 0xFF
 ]
 
-let extendedHexAlphabetDecodeTable: [UInt8] = [
+private let extendedHexAlphabetDecodeTable: [UInt8] = [
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x00 - 0x0F
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x10 - 0x1F
     __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x20 - 0x2F
