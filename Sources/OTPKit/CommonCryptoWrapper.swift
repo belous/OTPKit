@@ -10,6 +10,7 @@ import Foundation
 import CommonCrypto
 
 private extension HMACAlgorithm {
+    /// The `hashInfo` is a computed variable which type is a tuple of CommonCrypto hash function and corresponding digest length.
     var hashInfo: (hmacAlg: CCHmacAlgorithm, digestLength: Int) {
         switch self {
         case .sha1:
@@ -22,6 +23,13 @@ private extension HMACAlgorithm {
     }
 }
 
+/// Swift-wrapper for the CommonCrypto CCHmac-function
+///
+/// - parameter algorithm: `HMACAlgorithm` algorithm to perform.
+/// - parameter key: Raw key bytes.
+/// - parameter data: Data to process.
+///
+/// - returns: The resulted hash value for the given parameters.
 func HMAC(algorithm: HMACAlgorithm, key: Data, data: Data) -> Data {
     let (hmacAlg, digestLength) = algorithm.hashInfo
 
