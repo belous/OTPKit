@@ -4,7 +4,7 @@ A small library written in Swift which can generate time-based and counter-based
 
 ## Installation
 
-- Add `.package(url: "https://github.com:belous/OTPKit.git", from: "0.1.1")` to your `Package.swift` file's dependencies.
+- Add `.package(url: "https://github.com/belous/OTPKit.git", from: "0.1.2")` to your `Package.swift` file's dependencies.
 - Update your packages using `$ swift package update`.
 
 ## Usage

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import os.log
 
 extension String {
     var base32: Data? {
@@ -86,7 +85,6 @@ private func base32decode(_ string: String, _ table: [UInt8]) -> Data? {
         let pos = string.unicodeScalars.distance(from: string.unicodeScalars.startIndex, to: index)
         // if pos points padding "=", it's valid.
         if pos != length - leastPaddingLength {
-            os_log("string contains some invalid characters.")
             return nil
         }
     }
@@ -101,7 +99,6 @@ private func base32decode(_ string: String, _ table: [UInt8]) -> Data? {
     case 5: additionalBytes = 3
     case 7: additionalBytes = 4
     default:
-        os_log("string length is invalid.")
         return nil
     }
 
