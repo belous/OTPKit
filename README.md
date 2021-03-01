@@ -2,6 +2,9 @@
 
 A small library written in Swift which can generate time-based and counter-based one-time passwords.
 
+[![swift workflow](https://github.com/belous/OTPKit/actions/workflows/swift.yml/badge.svg)](https://github.com/belous/OTPKit/actions/workflows/swift.yml)
+[![codecov](https://codecov.io/gh/belous/OTPKit/branch/main/graph/badge.svg?token=21FV5GU1S7)](https://codecov.io/gh/belous/OTPKit)
+
 ## Installation
 
 - Add `.package(url: "https://github.com/belous/OTPKit.git", from: "0.1.2"),` to your `Package.swift` file's `dependencies`;
