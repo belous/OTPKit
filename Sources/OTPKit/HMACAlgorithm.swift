@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum HMACAlgorithm: Int, Codable {
+public enum HMACAlgorithm: Int {
     case sha1
     case sha256
     case sha512
