@@ -9,7 +9,7 @@
 import Foundation
 import CommonCrypto
 
-extension HMACAlgorithm {
+private extension HMACAlgorithm {
     var hashInfo: (hmacAlg: CCHmacAlgorithm, digestLength: Int) {
         switch self {
         case .sha1:

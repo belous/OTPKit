@@ -8,20 +8,16 @@
 
 import Foundation
 
-public protocol SecretProvidable {
+public protocol OTPProvidable {
     var secret: String { get }
     var digits: Int { get }
     var movingFactor: MovingFactor { get }
     var hmacAlgorithm: HMACAlgorithm { get }
 }
 
-public extension SecretProvidable {
+public extension OTPProvidable {
 
-    var currentOTP: String {
-        getOTP(at: Date())
-    }
-
-    func getOTP(at time: Date) -> String {
+    func getOTP(for time: Date) -> String {
         let counter = movingFactor.counterValue(at: time)
         return getOTP(for: counter)
     }
