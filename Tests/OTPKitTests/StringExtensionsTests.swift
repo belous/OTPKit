@@ -14,7 +14,7 @@ final class StringExtensionsTests: XCTestCase {
         let actual = "abc"
         let amountOfZeros = 10
         let result = actual.padded(with: "0", toLength: actual.count + amountOfZeros)
-        let expected = String(repeating: String("0"), count: amountOfZeros) + actual
+        let expected = "0000000000" + actual
         XCTAssertEqual(result, expected, "the result expected to be \(expected)")
     }
 
