@@ -4,14 +4,15 @@ A small library written in Swift which can generate time-based and counter-based
 
 ## Installation
 
-- Add `.package(url: "https://github.com/belous/OTPKit.git", from: "0.1.2")` to your `Package.swift` file's dependencies.
+- Add `.package(url: "https://github.com/belous/OTPKit.git", from: "0.1.2"),` to your `Package.swift` file's `dependencies`;
+- Add `OTPKit` to the list of `dependencies` for the target or your app: `.target(name: "MainApp", dependencies: ["OTPKit"]),`;
 - Update your packages using `$ swift package update`.
 
 ## Usage
 
 Create a struct or class and confirm it to the `OTPProvidable` protocol:
 
-```
+```swift
 public struct Secret: Codable, Equatable, Hashable {
     public let secret: String
     public let digits: Int
@@ -34,7 +35,7 @@ extension Secret: OTPProvidable {}
 
 To generate the current password you can call func `getOTP(for: date)` on instance of your's `OTPProvidable`:
 
-```
+```swift
 let secret = Secret(secret: "AABCDEFABCDEFABC")
 let currentPassword = secret.getOTP(for: Date())
 ```
