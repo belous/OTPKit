@@ -27,7 +27,7 @@ public protocol OTPProvidable {
 /// An extension to `OTPProvidable` which defines functions for generating One-Time Password
 public extension OTPProvidable {
 
-    // MARK: One-Time Password Generation
+    // MARK: - One-Time Password Generation
 
     /// Generates the password for the provided point in time.
     ///
