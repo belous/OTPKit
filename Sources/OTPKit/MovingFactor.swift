@@ -13,7 +13,6 @@ public enum MovingFactor {
     case timer(period: TimeInterval)
 }
 
-
 extension MovingFactor {
     func counterValue(at time: Date) -> UInt64 {
         switch self {
