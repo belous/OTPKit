@@ -23,9 +23,33 @@ final class OTPKitTests: XCTestCase {
         XCTAssertEqual(password, expected, "One-time password for the specific date should be \(expected)")
     }
 
+    func testExpectedOTPForSHA256() {
+        let secret = Secret(secret: "AABCDEFABCDEFABC", hmacAlgorithm: .sha256)
+        let password = secret.getOTP(for: Date(timeIntervalSince1970: 1614674826.597723))
+        let expected = "413331"
+        XCTAssertEqual(password, expected, "One-time password for the specific date should be \(expected)")
+    }
+
+    func testExpectedOTPForSHA512() {
+        let secret = Secret(secret: "AABCDEFABCDEFABC", hmacAlgorithm: .sha512)
+        let password = secret.getOTP(for: Date(timeIntervalSince1970: 1614674904.56199))
+        let expected = "755339"
+        XCTAssertEqual(password, expected, "One-time password for the specific date should be \(expected)")
+    }
+
+    func testEmptySecret() {
+        let expected = ""
+        let secret = Secret(secret: expected)
+        let password = secret.getOTP(for: 0)
+        XCTAssertEqual(password, expected, "One-time password for the specific date should be \(expected)")
+    }
+
     static var allTests = [
         ("testNonEmptyOTP", testNonEmptyOTP),
         ("testExpectedOTPForTheSpecificDate", testExpectedOTPForTheSpecificDate),
         ("testExpectedOTPForTheSpecificCounter", testExpectedOTPForTheSpecificCounter),
+        ("testExpectedOTPForSHA256", testExpectedOTPForSHA256),
+        ("testExpectedOTPForSHA512", testExpectedOTPForSHA512),
+        ("testEmptySecret", testEmptySecret),
     ]
 }
