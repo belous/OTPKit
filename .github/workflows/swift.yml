@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install swiftlint
-      run: brew install swiftlint
     - name: Run swiftlint
       run: swiftlint --strict
     - name: Build
