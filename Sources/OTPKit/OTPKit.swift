@@ -49,7 +49,9 @@ public extension OTPProvidable {
         var bigEndianCounter = counter.bigEndian
         let counterData = Data(bytes: &bigEndianCounter, count: MemoryLayout<UInt64>.size)
 
-        guard let base32Secret = secret.base32 else { return "" }
+        guard let base32Secret = secret.base32 else {
+            return ""
+        }
 
         let hash = HMAC(algorithm: hmacAlgorithm, key: base32Secret, data: counterData)
 
