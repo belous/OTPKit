@@ -4,6 +4,7 @@ A small library written in Swift which can generate time-based one-time password
 
 [![Swift](https://github.com/belous/OTPKit/actions/workflows/swift.yml/badge.svg)](https://github.com/belous/OTPKit/actions/workflows/swift.yml)
 [![codecov](https://codecov.io/gh/belous/OTPKit/branch/main/graph/badge.svg?token=21FV5GU1S7)](https://codecov.io/gh/belous/OTPKit)
+[![CodeFactor](https://www.codefactor.io/repository/github/belous/otpkit/badge)](https://www.codefactor.io/repository/github/belous/otpkit)
 
 ## Installation
 
